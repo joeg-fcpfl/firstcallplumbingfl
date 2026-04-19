@@ -26,7 +26,7 @@ const WHY = [
       </svg>
     ),
     title: 'Fully Licensed & Insured',
-    text: 'State Certified Plumbing Contractor #CFC1432753. We carry full general liability and workers\' comp on every project.',
+    text: 'State Certified Plumbing Contractor. We carry full general liability and workers\' comp on every project.',
   },
   {
     icon: (

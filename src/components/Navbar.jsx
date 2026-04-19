@@ -3,30 +3,10 @@ import './Navbar.css'
 
 const NavLogo = () => (
   <div className="nav-logo-wrap">
-    <svg width="40" height="50" viewBox="0 0 46 56" fill="none" className="nav-logo-icon" aria-hidden="true">
-      <path d="M9 31 Q6 25 9 18" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity="0.4"/>
-      <path d="M6 33 Q2 24 6 15" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.22"/>
-      <path
-        d="M23 5 C23 5 8 21 8 34 C8 44.5 14.8 52 23 52 C31.2 52 38 44.5 38 34 C38 21 23 5 23 5Z"
-        stroke="currentColor" strokeWidth="2" fill="currentColor" fillOpacity="0.08"
-      />
-      <line x1="16" y1="45" x2="31" y2="19" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round"/>
-      <rect x="21" y="30.5" width="7" height="4" rx="1.5"
-        fill="currentColor" transform="rotate(-60 24.5 32.5)"/>
-      <path d="M29 17 C27 12 34 10 36 14 C37.5 17 35 20 32 19 L30 17.5 Z" fill="currentColor"/>
-      <path d="M31 21 C36 19 38 23 35 24.5 L32 22.5 Z" fill="currentColor"/>
-      <ellipse cx="15.5" cy="45.5" rx="3.2" ry="2.2"
-        fill="currentColor" transform="rotate(-60 15.5 45.5)"/>
-    </svg>
-
+    <img src="/FirstCall-01-4.png" alt="" className="nav-logo-img" aria-hidden="true" />
     <div className="nav-logo-text">
       <span className="nav-logo-main">FIRST CALL</span>
-      <span className="nav-logo-sub">
-        <span className="nav-logo-rule" />
-        PLUMBING
-        <span className="nav-logo-rule" />
-      </span>
-      <span className="nav-logo-lic">CFC1432753</span>
+      <span className="nav-logo-sub">PLUMBING</span>
     </div>
   </div>
 )

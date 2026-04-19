@@ -6,7 +6,7 @@ const STATS = [
   { value: 25, suffix: '+', label: 'Years in Business', sub: 'Serving South Florida since 1999' },
   { value: 500, suffix: '+', label: 'Commercial Projects', sub: 'From Miami to West Palm Beach' },
   { value: 3,   suffix: '',  label: 'Counties Covered', sub: 'Palm Beach · Broward · Miami-Dade' },
-  { value: 100, suffix: '%', label: 'Licensed & Insured', sub: 'CFC1432753 · Fully bonded' },
+  { value: 100, suffix: '%', label: 'Licensed & Insured', sub: 'Fully bonded & insured' },
 ]
 
 function StatItem({ value, suffix, label, sub, active, delay }) {

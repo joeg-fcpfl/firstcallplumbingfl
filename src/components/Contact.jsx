@@ -70,7 +70,7 @@ const INFO = [
       </svg>
     ),
     label: 'License',
-    value: 'CFC1432753\nState Certified Contractor',
+    value: 'State Certified Contractor',
     href: null,
   },
 ]

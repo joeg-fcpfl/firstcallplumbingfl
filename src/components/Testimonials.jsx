@@ -153,7 +153,7 @@ export default function Testimonials() {
           <div className="test-rating-badges">
             <span className="test-badge">Google Verified</span>
             <span className="test-badge">BBB Accredited</span>
-            <span className="test-badge">Licensed CFC1432753</span>
+            <span className="test-badge">State Licensed</span>
           </div>
         </div>
       </div>

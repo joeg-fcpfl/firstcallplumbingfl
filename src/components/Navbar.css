@@ -34,52 +34,33 @@
   gap: var(--space-3);
 }
 
-.nav-logo-icon {
-  color: var(--amber);
-  flex-shrink: 0;
+.nav-logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
 }
 
 .nav-logo-text {
   display: flex;
   flex-direction: column;
   line-height: 1;
-  gap: 2px;
+  gap: 3px;
 }
 
 .nav-logo-main {
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: 21px;
+  font-size: 20px;
   color: var(--text-dark);
   letter-spacing: 1.5px;
-  line-height: 1;
 }
 
 .nav-logo-sub {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 4px;
   color: var(--text-med);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.nav-logo-rule {
-  display: inline-block;
-  width: 12px;
-  height: 1px;
-  background: var(--border-strong);
-  flex-shrink: 0;
-}
-
-.nav-logo-lic {
-  font-family: var(--font-body);
-  font-size: 9px;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  color: var(--gray);
 }
 
 /* ─── Nav links ─── */

@@ -38,7 +38,6 @@ const NavLogo = () => (
     <div>
       <div className="footer-logo-name">FIRST CALL</div>
       <div className="footer-logo-sub">— PLUMBING —</div>
-      <div className="footer-logo-lic">CFC1432753</div>
     </div>
   </div>
 )
@@ -126,7 +125,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <p className="footer-copy">
-            © {year} First Call Plumbing · All Rights Reserved · Licensed CFC1432753
+            © {year} First Call Plumbing · All Rights Reserved
           </p>
           <p className="footer-owners">
             Joe G. &amp; Gordon X., Co-Owners · Fort Lauderdale, FL
