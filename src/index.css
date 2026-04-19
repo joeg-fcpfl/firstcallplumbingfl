@@ -1,28 +1,63 @@
 :root {
-  /* Brand colors — matched to business card */
-  --navy:        #4E5A8A;   /* exact brand navy from business card */
-  --navy-dark:   #2E3B6A;   /* darker navy for sections */
-  --navy-darker: #141E40;   /* deepest backgrounds */
-  --navy-mid:    #3A4878;   /* mid-tone navy */
-  --navy-light:  #6878B0;   /* lighter navy for subtle elements */
-  --navy-pale:   #8B9AC8;   /* pale navy for muted text */
+  /* ─── Warm industrial palette — South Florida sun ─── */
 
-  /* Accent — lighter periwinkle blue derived from brand navy */
-  --orange:      #8BAEE0;   /* light periwinkle blue (replaces orange everywhere) */
-  --orange-lt:   #A8C4EE;   /* lighter hover state */
-  --orange-dk:   #6090C8;   /* darker active state */
+  /* Surfaces */
+  --bg:             oklch(97% 0.008 75);
+  --surface:        oklch(93% 0.010 75);
+  --surface-dark:   oklch(16% 0.015 55);
+  --surface-darker: oklch(11% 0.012 55);
 
-  --white:       #FFFFFF;
-  --off-white:   #F0F2FA;   /* white with a slight navy tint */
-  --lt-gray:     #D8DDED;   /* light gray with blue cast */
-  --gray:        #7A8BAC;
-  --text-dark:   #141E3C;
-  --text-med:    #3A4868;
+  /* Text */
+  --text-dark:      oklch(17% 0.015 55);
+  --text-med:       oklch(40% 0.012 55);
 
-  --font-display: 'Barlow Condensed', sans-serif;
-  --font-body:    'DM Sans', sans-serif;
+  /* Accent — burnt amber */
+  --amber:          oklch(64% 0.17 55);
+  --amber-lt:       oklch(73% 0.13 55);
+  --amber-dk:       oklch(52% 0.19 55);
 
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Secondary — slate blue */
+  --slate:          oklch(46% 0.09 240);
+  --slate-lt:       oklch(62% 0.07 240);
+
+  /* Borders */
+  --border:         oklch(87% 0.010 75);
+  --border-strong:  oklch(74% 0.012 75);
+
+  /* Neutrals */
+  --white:          oklch(98% 0.005 75);
+  --off-white:      oklch(95% 0.009 75);
+  --lt-gray:        oklch(87% 0.010 75);
+  --gray:           oklch(58% 0.008 55);
+
+  /* ─── Legacy aliases — existing components keep working ─── */
+  --navy:           oklch(46% 0.09 240);
+  --navy-dark:      oklch(17% 0.015 55);
+  --navy-darker:    oklch(11% 0.012 55);
+  --navy-mid:       oklch(40% 0.012 55);
+  --navy-light:     oklch(62% 0.07 240);
+  --navy-pale:      oklch(74% 0.008 75);
+  --orange:         oklch(64% 0.17 55);
+  --orange-lt:      oklch(73% 0.13 55);
+  --orange-dk:      oklch(52% 0.19 55);
+
+  /* ─── Typography ─── */
+  --font-display: 'Big Shoulders Display', sans-serif;
+  --font-body:    'Hanken Grotesk', sans-serif;
+
+  /* ─── Spacing scale (4pt base) ─── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  /* ─── Easing ─── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
 }
 
@@ -39,7 +74,7 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--text-dark);
-  background: var(--white);
+  background: var(--bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -63,7 +98,7 @@ button {
 .container {
   max-width: 1220px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(var(--space-6), 4vw, var(--space-8));
 }
 
 .section-label {
@@ -72,28 +107,28 @@ button {
   font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 12px;
+  color: var(--amber);
+  margin-bottom: var(--space-3);
 }
 
 .section-title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(36px, 5vw, 56px);
-  line-height: 1.0;
+  font-size: clamp(38px, 5vw, 60px);
+  line-height: 0.95;
   letter-spacing: -0.5px;
-  color: var(--navy-dark);
+  color: var(--text-dark);
 }
 
 .section-title.light {
   color: var(--white);
 }
 
-/* Fade-in animation utility */
+/* Fade-up entrance animation */
 .fade-up {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  transform: translateY(28px);
+  transition: opacity 0.65s var(--ease-out), transform 0.65s var(--ease-out);
 }
 
 .fade-up.visible {
@@ -101,14 +136,14 @@ button {
   transform: translateY(0);
 }
 
-.fade-up.delay-1 { transition-delay: 0.1s; }
-.fade-up.delay-2 { transition-delay: 0.2s; }
-.fade-up.delay-3 { transition-delay: 0.3s; }
-.fade-up.delay-4 { transition-delay: 0.4s; }
-.fade-up.delay-5 { transition-delay: 0.5s; }
-.fade-up.delay-6 { transition-delay: 0.6s; }
+.fade-up.delay-1 { transition-delay: 0.08s; }
+.fade-up.delay-2 { transition-delay: 0.16s; }
+.fade-up.delay-3 { transition-delay: 0.24s; }
+.fade-up.delay-4 { transition-delay: 0.32s; }
+.fade-up.delay-5 { transition-delay: 0.40s; }
+.fade-up.delay-6 { transition-delay: 0.48s; }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--navy-darker); }
-::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 3px; }
+::-webkit-scrollbar-track { background: var(--surface-darker); }
+::-webkit-scrollbar-thumb { background: var(--amber-dk); border-radius: 3px; }
