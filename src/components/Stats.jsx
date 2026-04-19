@@ -27,7 +27,6 @@ export default function Stats() {
 
   return (
     <section className="stats" ref={ref}>
-      <div className="stats-bg-pattern" aria-hidden="true" />
       <div className="container">
         <div className={`stats-grid ${inView ? 'visible' : ''}`}>
           {STATS.map((s, i) => (
