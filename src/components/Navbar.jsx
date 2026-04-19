@@ -3,36 +3,20 @@ import './Navbar.css'
 
 const NavLogo = () => (
   <div className="nav-logo-wrap">
-    {/* Icon mirrors the business card: water drop + pipe wrench */}
-    <svg width="46" height="56" viewBox="0 0 46 56" fill="none" aria-hidden="true">
-      {/* Water ripple lines left of drop (as seen on business card) */}
-      <path d="M9 31 Q6 25 9 18" stroke="white" strokeWidth="1.4" strokeLinecap="round" opacity="0.4"/>
-      <path d="M6 33 Q2 24 6 15" stroke="white" strokeWidth="1.2" strokeLinecap="round" opacity="0.22"/>
-
-      {/* Water drop — classic teardrop, pointed top, round bottom */}
+    <svg width="40" height="50" viewBox="0 0 46 56" fill="none" className="nav-logo-icon" aria-hidden="true">
+      <path d="M9 31 Q6 25 9 18" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity="0.4"/>
+      <path d="M6 33 Q2 24 6 15" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.22"/>
       <path
         d="M23 5 C23 5 8 21 8 34 C8 44.5 14.8 52 23 52 C31.2 52 38 44.5 38 34 C38 21 23 5 23 5Z"
-        stroke="white" strokeWidth="2" fill="rgba(255,255,255,0.06)"
+        stroke="currentColor" strokeWidth="2" fill="currentColor" fillOpacity="0.08"
       />
-
-      {/* Pipe wrench inside the drop — diagonal lower-left to upper-right */}
-      {/* Handle */}
-      <line x1="16" y1="45" x2="31" y2="19" stroke="white" strokeWidth="2.8" strokeLinecap="round"/>
-
-      {/* Adjustment nut (thumb wheel on handle) */}
+      <line x1="16" y1="45" x2="31" y2="19" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round"/>
       <rect x="21" y="30.5" width="7" height="4" rx="1.5"
-        fill="white" transform="rotate(-60 24.5 32.5)"/>
-
-      {/* Fixed jaw — upper part, opening to upper-left */}
-      <path d="M29 17 C27 12 34 10 36 14 C37.5 17 35 20 32 19 L30 17.5 Z"
-        fill="white"/>
-      {/* Movable jaw — lower part */}
-      <path d="M31 21 C36 19 38 23 35 24.5 L32 22.5 Z"
-        fill="white"/>
-
-      {/* Bottom end cap of wrench handle */}
+        fill="currentColor" transform="rotate(-60 24.5 32.5)"/>
+      <path d="M29 17 C27 12 34 10 36 14 C37.5 17 35 20 32 19 L30 17.5 Z" fill="currentColor"/>
+      <path d="M31 21 C36 19 38 23 35 24.5 L32 22.5 Z" fill="currentColor"/>
       <ellipse cx="15.5" cy="45.5" rx="3.2" ry="2.2"
-        fill="white" transform="rotate(-60 15.5 45.5)"/>
+        fill="currentColor" transform="rotate(-60 15.5 45.5)"/>
     </svg>
 
     <div className="nav-logo-text">
@@ -60,7 +44,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 60)
+    const handler = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
   }, [])
@@ -72,7 +56,7 @@ export default function Navbar() {
           <NavLogo />
         </a>
 
-        <nav className={`navbar-links ${open ? 'open' : ''}`}>
+        <nav className={`navbar-links ${open ? 'open' : ''}`} aria-label="Main navigation">
           {LINKS.map((l) => (
             <a key={l.label} href={l.href} className="nav-link" onClick={() => setOpen(false)}>
               {l.label}
@@ -84,7 +68,7 @@ export default function Navbar() {
         </nav>
 
         <a href="tel:9547382255" className="nav-phone-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014 11.91a19.79 19.79 0 01-3.07-8.67A2 2 0 012.91 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
           </svg>
           954-738-CALL
@@ -94,6 +78,7 @@ export default function Navbar() {
           className={`hamburger ${open ? 'open' : ''}`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           <span /><span /><span />
         </button>
