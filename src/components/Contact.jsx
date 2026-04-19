@@ -21,16 +21,6 @@ const INFO = [
   {
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014 11.91a19.79 19.79 0 01-3.07-8.67A2 2 0 012.91 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-      </svg>
-    ),
-    label: 'Phone',
-    value: '954-738-CALL (2255)',
-    href: 'tel:9547382255',
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
         <polyline points="22,6 12,13 2,6"/>
       </svg>
@@ -110,7 +100,6 @@ export default function Contact() {
           </h2>
           <p className="contact-head-sub">
             Fill out the form and we'll get back to you within one business day.
-            Prefer to talk? Call us directly at <a href="tel:9547382255" className="contact-phone-link">954-738-CALL</a>.
           </p>
         </div>
 
@@ -212,7 +201,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <h3>Message Received!</h3>
-                <p>Thanks for reaching out. Joe or Gordon will be in touch within one business day. If it's urgent, call us directly at <a href="tel:9547382255">954-738-CALL</a>.</p>
+                <p>Thanks for reaching out. Joe or Gordon will be in touch within one business day.</p>
                 <button className="form-reset" onClick={() => { setSubmitted(false); setForm({ name:'', company:'', phone:'', email:'', service:'', county:'', message:'' }) }}>
                   Send Another Request
                 </button>
@@ -238,16 +227,6 @@ export default function Contact() {
               </div>
             ))}
 
-            <div className="info-cta-box">
-              <p className="info-cta-eyebrow">NEED IMMEDIATE HELP?</p>
-              <h4 className="info-cta-title">Call Us Directly</h4>
-              <a href="tel:9547382255" className="info-cta-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014 11.91a19.79 19.79 0 01-3.07-8.67A2 2 0 012.91 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-                </svg>
-                954-738-CALL (2255)
-              </a>
-            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import { useInView } from '../hooks/useInView'
-import logo from '../../firstcallplumbing.jpg'
 import './About.css'
 
 const OWNERS = [
@@ -11,7 +10,7 @@ const OWNERS = [
   },
   {
     initials: 'GX',
-    name: 'Gordon X.',
+    name: 'Gordon P.',
     title: 'Co-Owner · Project Management',
     bio: 'Gordon drives every project from bid to closeout, coordinating with general contractors, building officials, and property managers to keep schedules tight and budgets on track.',
   },
@@ -109,10 +108,6 @@ export default function About() {
               ))}
             </div>
 
-            {/* Logo */}
-            <div className="about-logo-card">
-              <img src={logo} alt="First Call Plumbing Business Card" className="about-logo-img" />
-            </div>
           </div>
 
           {/* Right — why us */}
@@ -136,8 +131,8 @@ export default function About() {
                 Call or email us for a free, no-pressure estimate. We respond same day.
               </p>
               <div className="about-cta-actions">
-                <a href="tel:9547382255" className="about-cta-primary">
-                  954-738-CALL
+                <a href="#contact" className="about-cta-primary">
+                  GET A FREE ESTIMATE
                 </a>
                 <a href="mailto:info@firstcallplumbingfl.com" className="about-cta-secondary">
                   info@firstcallplumbingfl.com

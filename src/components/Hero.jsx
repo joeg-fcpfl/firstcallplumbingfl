@@ -41,14 +41,14 @@ export default function Hero() {
         </p>
 
         <div className={`hero-actions fade-up delay-3 ${loaded ? 'visible' : ''}`}>
-          <a href="tel:9547382255" className="hero-btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014 11.91a19.79 19.79 0 01-3.07-8.67A2 2 0 012.91 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-            </svg>
-            CALL 954-738-CALL
-          </a>
-          <a href="#contact" className="hero-btn-secondary">
+          <a href="#contact" className="hero-btn-primary">
             REQUEST A QUOTE
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#services" className="hero-btn-secondary">
+            VIEW SERVICES
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -77,10 +77,6 @@ export default function Hero() {
           <p className="hero-panel-lic">License #CFC1432753</p>
         </div>
 
-        <div className="hero-panel-phone">
-          <span className="hero-panel-phone-label">Call us direct</span>
-          <a href="tel:9547382255" className="hero-panel-number">954-738-CALL</a>
-        </div>
 
         <div className="hero-panel-divider" />
 
@@ -113,8 +109,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <a href="tel:9547382255" className="hero-panel-cta">
-          CALL FOR FREE ESTIMATE
+        <a href="#contact" className="hero-panel-cta">
+          REQUEST A FREE ESTIMATE
         </a>
       </div>
 

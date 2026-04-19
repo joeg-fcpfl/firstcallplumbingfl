@@ -196,8 +196,8 @@ export default function Services() {
 
         <div className="services-footer">
           <p>Don't see your project type? <strong>We do it all.</strong></p>
-          <a href="tel:9547382255" className="services-cta">
-            CALL FOR A CUSTOM QUOTE
+          <a href="#contact" className="services-cta">
+            REQUEST A CUSTOM QUOTE
           </a>
         </div>
       </div>

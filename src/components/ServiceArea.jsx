@@ -112,8 +112,8 @@ export default function ServiceArea() {
             </svg>
             <span>Not sure if we cover your area? Give us a call — we probably do.</span>
           </div>
-          <a href="tel:9547382255" className="sa-cta-btn">
-            954-738-CALL
+          <a href="#contact" className="sa-cta-btn">
+            REQUEST A QUOTE
           </a>
         </div>
       </div>
