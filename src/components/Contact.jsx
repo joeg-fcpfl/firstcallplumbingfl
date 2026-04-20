@@ -77,13 +77,33 @@ export default function Contact() {
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => {
+    try {
+      const res = await fetch('https://formspree.io/f/xeevzglk', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          company: form.company,
+          phone: form.phone,
+          email: form.email,
+          service: form.service,
+          county: form.county,
+          message: form.message,
+        }),
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        alert('Something went wrong. Please try calling us directly.')
+      }
+    } catch {
+      alert('Network error. Please try calling us directly.')
+    } finally {
       setLoading(false)
-      setSubmitted(true)
-    }, 1200)
+    }
   }
 
   return (
