@@ -76,10 +76,6 @@ export default function Testimonials() {
 
   return (
     <section id="reviews" className="testimonials">
-      <div className="testimonials-bg" aria-hidden="true">
-        <div className="test-bg-glow" />
-      </div>
-
       <div className="container">
         <div ref={headRef} className={`test-head fade-up ${headIn ? 'visible' : ''}`}>
           <p className="section-label">Client Reviews</p>
