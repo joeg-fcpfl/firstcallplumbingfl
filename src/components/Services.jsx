@@ -136,7 +136,7 @@ const SERVICES = [
         <path d="M34 8 L40 14"/>
       </svg>
     ),
-    title: '24-Hour Service',
+    title: '24-Hour Emergency Service',
     tag: 'Emergency Response',
     desc: 'Plumbing emergencies don\'t wait for business hours. We\'re available around the clock for burst pipes, sewer backups, gas leaks, and any situation that can\'t wait until Monday morning.',
   },

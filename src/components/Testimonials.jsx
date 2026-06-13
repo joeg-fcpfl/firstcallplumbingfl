@@ -4,52 +4,84 @@ import './Testimonials.css'
 
 const REVIEWS = [
   {
-    name: 'Marcus Rivera',
-    role: 'Director of Facilities',
-    company: 'Pinnacle Property Group',
-    city: 'Boca Raton, FL',
-    stars: 5,
-    text: 'First Call has been our go-to commercial plumber for three portfolio properties now. They handled the full rough-in on our Boca office park — ahead of schedule and without a single failed inspection. Joe is incredibly communicative and the crew is professional from start to finish.',
-  },
-  {
-    name: 'Sandra Mehta',
-    role: 'Owner',
-    company: 'Coastline Bistro Group',
+    name: 'Jade',
+    role: 'Google Review',
+    company: 'Fort Lauderdale, FL',
     city: 'Fort Lauderdale, FL',
     stars: 5,
-    text: 'We opened two restaurant locations in 2023 and First Call did both. Grease trap installation, gas lines, and all the rough-in work. They know the county requirements inside and out. Gordon kept us on schedule when the GC was running behind — couldn\'t have done it without them.',
+    text: 'First Call Plumbing did an amazing job all around! They showed up on time, were really friendly, and got the work done efficiently. I\'ll definitely call them again for any future plumbing needs and highly recommend them to anyone looking for a reliable plumber.',
   },
   {
-    name: 'Derek Fontaine',
-    role: 'Project Manager',
-    company: 'Sunstate Commercial Builders',
-    city: 'Miami, FL',
+    name: 'Ashley Savarick',
+    role: 'Google Review',
+    company: 'Fort Lauderdale, FL',
+    city: 'Fort Lauderdale, FL',
     stars: 5,
-    text: 'As a general contractor, I\'ve worked with a lot of plumbing subs. First Call is one of the few that actually shows up when they say they will, submits RFIs quickly, and doesn\'t leave punch list items hanging. They\'re on every bid list we have now.',
+    text: 'Gordon is absolutely the best! He helped us when our water heater broke and took care of some internal plumbing issues with ease and professionalism. He\'s knowledgeable, responsive, and always goes above and beyond to get the job done.',
   },
   {
-    name: 'Patricia Okonkwo',
-    role: 'Regional Facilities Manager',
-    company: 'Solaris Hospitality — South FL Hotels',
-    city: 'West Palm Beach, FL',
+    name: 'Tim Starkey',
+    role: 'Google Review · Local Guide',
+    company: 'Pompano Beach, FL',
+    city: 'Pompano Beach, FL',
     stars: 5,
-    text: 'We had an emergency backflow failure at one of our hotels on a Friday afternoon. First Call had a team on-site within two hours and the system was certified and back online before the weekend rush. Their response time and professionalism under pressure is unmatched.',
+    text: 'Installed a tankless water heater for me. Works fantastic — made some room in my garage too. Goodbye old water tank. Great guy to work with.',
   },
   {
-    name: 'Thomas Kramer',
-    role: 'VP of Construction',
-    company: 'Emerald Coast Development',
-    city: 'Deerfield Beach, FL',
+    name: 'Ronald',
+    role: 'Google Review',
+    company: 'Fort Lauderdale, FL',
+    city: 'Fort Lauderdale, FL',
     stars: 5,
-    text: 'We\'ve worked with First Call on four new construction projects. From permit submission to final inspection, they handle everything. Their knowledge of Broward County building department processes alone saves us weeks on every project.',
+    text: 'I hired First Call Plumbing on several occasions. They came out to replace my water heater, remove a stuck toy from the kids\' toilet, and jet the old cast iron pipes. The experience on each call was excellent from start to finish.',
   },
   {
-    name: 'Angela Soto',
-    role: 'Property Manager',
-    company: 'Metropolitan Office Suites',
-    city: 'Coral Gables, FL',
+    name: 'Nancy Mallinger',
+    role: 'Google Review',
+    company: 'Fort Lauderdale, FL',
+    city: 'Fort Lauderdale, FL',
     stars: 5,
-    text: 'Our annual backflow testing, quarterly drain maintenance, and two major tenant buildouts have all been handled by First Call. Consistent quality, fair pricing, and they always leave the job site clean. Our tenants never even know they were there.',
+    text: 'Gordon did an amazing job on my bathroom renovation. I\'ve also used him on multiple projects. I highly recommend him and his company.',
+  },
+  {
+    name: 'Max M.',
+    role: 'Google Review',
+    company: 'Fort Lauderdale, FL',
+    city: 'Fort Lauderdale, FL',
+    stars: 5,
+    text: 'Gordon and his team are amazing. Came out quick for a water heater leak and got the job done the same day.',
+  },
+  {
+    name: 'Joe Graubart',
+    role: 'Google Review · Local Guide',
+    company: 'Fort Lauderdale, FL',
+    city: 'Fort Lauderdale, FL',
+    stars: 5,
+    text: 'First Call Plumbing completed lots of plumbing for me over a one year period while renovations took place — starting with a water heater replacement and main shut off valve. Great work throughout the entire project.',
+  },
+  {
+    name: 'YRM Custom',
+    role: 'Google Review',
+    company: 'Fort Lauderdale, FL',
+    city: 'Fort Lauderdale, FL',
+    stars: 5,
+    text: 'We\'ve called First Call Plumbing several times for different toilet issues and they\'ve been great every time. They are fast, show up on time, and explain the problem clearly. Each repair has been done right the first time.',
+  },
+  {
+    name: 'Michael Carter',
+    role: 'Google Review',
+    company: 'Fort Lauderdale, FL',
+    city: 'Fort Lauderdale, FL',
+    stars: 5,
+    text: 'I have used First Call several times since moving in. I have always been impressed by their service and would highly recommend them.',
+  },
+  {
+    name: 'Javi Colina',
+    role: 'Google Review',
+    company: 'Fort Lauderdale, FL',
+    city: 'Fort Lauderdale, FL',
+    stars: 5,
+    text: 'Excellent service!',
   },
 ]
 
@@ -80,8 +112,8 @@ export default function Testimonials() {
         <div ref={headRef} className={`test-head fade-up ${headIn ? 'visible' : ''}`}>
           <p className="section-label">Client Reviews</p>
           <h2 className="section-title light">
-            WHAT SOUTH FLORIDA
-            <br />CONTRACTORS SAY
+            WHAT OUR
+            <br />CUSTOMERS SAY
           </h2>
         </div>
 
@@ -147,8 +179,7 @@ export default function Testimonials() {
             <span className="test-rating-label">Based on verified reviews</span>
           </div>
           <div className="test-rating-badges">
-            <span className="test-badge">Google Verified</span>
-            <span className="test-badge">BBB Accredited</span>
+            <a className="test-badge" href="https://www.google.com/search?q=first+call+plumbing#lrd=0x695a830773065c87:0x8453e6a11b50f816,1,,,," target="_blank" rel="noopener noreferrer">Google Verified</a>
             <span className="test-badge">State Licensed</span>
           </div>
         </div>

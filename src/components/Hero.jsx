@@ -11,7 +11,7 @@ const SERVICES = [
   'Drain Cleaning',
   'Video Sewer Inspection',
   'Water Heaters & Tankless Conversions',
-  '24-Hour Service',
+  '24-Hour Emergency Service',
   'Kitchen & Bathroom Repairs',
   'Preventative Maintenance',
 ]
