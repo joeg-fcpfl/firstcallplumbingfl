@@ -53,7 +53,7 @@ export default function Footer() {
             <NavLogo />
             <p className="footer-tagline">
               South Florida's trusted commercial plumbing contractor. Serving Palm Beach,
-              Broward, and Miami-Dade counties since 1999.
+              Broward, and Miami-Dade counties since 2023.
             </p>
             <div className="footer-contact-block">
               <a href="tel:9547382255" className="footer-phone">
@@ -128,7 +128,7 @@ export default function Footer() {
             © {year} First Call Plumbing · All Rights Reserved
           </p>
           <p className="footer-owners">
-            Joe G. &amp; Gordon X., Co-Owners · Fort Lauderdale, FL
+            Joe G. &amp; Gordon P., Co-Owners · Pompano Beach, FL
           </p>
         </div>
       </div>

@@ -7,7 +7,13 @@ const SERVICES = [
   'Backflow Testing',
   'Grease Traps',
   'Gas Lines',
-  'Code Compliance',
+  'Remodels',
+  'Drain Cleaning',
+  'Video Sewer Inspection',
+  'Water Heaters & Tankless Conversions',
+  '24-Hour Service',
+  'Kitchen & Bathroom Repairs',
+  'Preventative Maintenance',
 ]
 
 export default function Hero() {
@@ -31,8 +37,8 @@ export default function Hero() {
         <h1 className={`hero-title fade-up delay-1 ${loaded ? 'visible' : ''}`}>
           SOUTH<br />
           FLORIDA'S<br />
-          <span className="hero-title-accent">COMMERCIAL</span><br />
-          PLUMBING
+          GO-TO<br />
+          <span className="hero-title-accent">PLUMBERS</span>
         </h1>
 
         <p className={`hero-sub fade-up delay-2 ${loaded ? 'visible' : ''}`}>
@@ -57,12 +63,12 @@ export default function Hero() {
 
         <div className={`hero-trust fade-up delay-4 ${loaded ? 'visible' : ''}`}>
           <div className="trust-item">
-            <span className="trust-num">25+</span>
-            <span className="trust-label">Years in Business</span>
+            <span className="trust-num">20+</span>
+            <span className="trust-label">Years Experience</span>
           </div>
           <div className="trust-item">
-            <span className="trust-num">500+</span>
-            <span className="trust-label">Commercial Projects</span>
+            <span className="trust-num">1,000+</span>
+            <span className="trust-label">Projects Completed</span>
           </div>
           <div className="trust-item">
             <span className="trust-num">3</span>
@@ -105,7 +111,7 @@ export default function Hero() {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
             </svg>
-            Fort Lauderdale, FL 33317
+            Pompano Beach, FL 33069
           </div>
         </div>
 

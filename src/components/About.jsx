@@ -5,14 +5,14 @@ const OWNERS = [
   {
     initials: 'JG',
     name: 'Joe G.',
-    title: 'Co-Owner · Field Operations',
-    bio: 'With over two decades of hands-on commercial plumbing experience, Joe oversees every job site to ensure work is executed to the highest standards. He\'s the one who answers the phone when things get complicated.',
+    title: 'Co-Owner · Project Management',
+    bio: 'Joe drives every project from bid to closeout, coordinating with general contractors, building officials, and property managers to keep schedules tight and budgets on track.',
   },
   {
-    initials: 'GX',
+    initials: 'GP',
     name: 'Gordon P.',
-    title: 'Co-Owner · Project Management',
-    bio: 'Gordon drives every project from bid to closeout, coordinating with general contractors, building officials, and property managers to keep schedules tight and budgets on track.',
+    title: 'Co-Owner · Service Management',
+    bio: 'Gordon oversees all service operations — from emergency calls to routine maintenance. He\'s the one who answers when things get complicated and makes sure every job gets handled right.',
   },
 ]
 
@@ -57,7 +57,7 @@ const WHY = [
       </svg>
     ),
     title: 'Transparent Pricing',
-    text: 'Detailed written bids before any work begins. No surprise change orders — we identify scope upfront and stick to it.',
+    text: 'We communicate clearly on cost before and during every job. Some work reveals additional scope once we\'re in. When that happens, we walk you through what we found and why before moving forward.',
   },
 ]
 
@@ -82,16 +82,26 @@ export default function About() {
           {/* Left — story + owners */}
           <div ref={leftRef} className={`about-left fade-up delay-1 ${leftIn ? 'visible' : ''}`}>
             <p className="about-body">
-              First Call Plumbing was founded on a simple idea: South Florida's commercial
-              property owners and general contractors deserve a plumbing partner who shows
-              up on time, communicates clearly, and delivers work that passes inspection
-              the first time — every time.
+              First Call Plumbing was built on one idea: do good work at a fair price.
+              South Florida homeowners, property owners, and general contractors deserve
+              a plumbing partner who shows up on time, communicates clearly, and delivers
+              work that passes inspection the first time.
             </p>
             <p className="about-body">
               Operating out of Fort Lauderdale and serving all of Palm Beach, Broward, and
-              Miami-Dade counties, our team brings decades of combined experience on
-              projects ranging from small restaurant tenant improvements to large-scale
-              commercial new construction.
+              Miami-Dade counties, our team brings 20 years of combined experience on
+              projects of every size, from a single fixture repair to ground-up new construction.
+            </p>
+            <p className="about-body">
+              Our service division handles the everyday and the unexpected: drain cleaning,
+              water heaters, kitchen and bathroom repairs, backflow testing, and 24-hour
+              emergency response. When something breaks or just isn't working right, Gordon's
+              team is who you call.
+            </p>
+            <p className="about-body">
+              On the construction side, Joe manages new builds and tenant buildouts from
+              bid to certificate of occupancy. We work alongside general contractors,
+              coordinate with inspectors, and handle everything from rough-in to final trim.
             </p>
 
             {/* Owners */}

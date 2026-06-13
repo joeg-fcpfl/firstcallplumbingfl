@@ -9,7 +9,7 @@ const COUNTIES = [
     cities: [
       'West Palm Beach', 'Boca Raton', 'Delray Beach',
       'Boynton Beach', 'Lake Worth', 'Jupiter',
-      'Palm Beach Gardens', 'Wellington',
+      'Palm Beach Gardens',
     ],
     highlight: 'Northern Service Hub',
   },
@@ -30,9 +30,9 @@ const COUNTIES = [
     abbr: 'MDC',
     color: '#4B7BC4',
     cities: [
-      'Miami', 'Hialeah', 'Coral Gables',
-      'Doral', 'Kendall', 'Aventura',
-      'North Miami', 'Homestead',
+      'Miami', 'Hialeah', 'Doral',
+      'Aventura', 'North Miami', 'Miami Gardens',
+      'North Miami Beach', 'South Beach',
     ],
     highlight: 'Southern Service Hub',
   },

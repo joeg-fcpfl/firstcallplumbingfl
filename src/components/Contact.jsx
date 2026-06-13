@@ -36,9 +36,20 @@ const INFO = [
         <circle cx="12" cy="10" r="3"/>
       </svg>
     ),
-    label: 'Address',
+    label: 'Mailing Address',
     value: '7027 W Broward Blvd #392\nFort Lauderdale, FL 33317',
     href: 'https://maps.google.com/?q=7027+W+Broward+Blvd+Fort+Lauderdale+FL',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+        <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+    ),
+    label: 'Shop',
+    value: '2191 North Powerline Rd #2\nPompano Beach, FL 33069',
+    href: 'https://maps.google.com/?q=2191+North+Powerline+Rd+Pompano+Beach+FL',
   },
   {
     icon: (
