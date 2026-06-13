@@ -111,7 +111,9 @@ export default function Hero() {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
             </svg>
-            Pompano Beach, FL 33069
+            <a href="https://maps.app.goo.gl/zmERMEhczvDmReTz9" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
+              Pompano Beach, FL 33069
+            </a>
           </div>
         </div>
 
