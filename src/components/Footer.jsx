@@ -1,25 +1,16 @@
+import { Link, useLocation } from 'react-router-dom'
 import './Footer.css'
-
-const SERVICES = [
-  'New Construction',
-  'Tenant Improvements',
-  'Backflow Prevention',
-  'Grease Trap Services',
-  'Gas Line Services',
-  'Hydro Jetting',
-  'Water Heater Systems',
-  'Sewer & Water Mains',
-  'Code Compliance',
-  'Preventive Maintenance',
-]
+import { SERVICES } from './Services'
+import { COUNTIES } from './ServiceArea'
+import { SERVICE_SLUGS, AREA_SLUGS } from '../data/slugs'
 
 const QUICKLINKS = [
-  { label: 'Services', href: '#services' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Coverage Area', href: '#coverage' },
-  { label: 'Reviews', href: '#reviews' },
-  { label: 'Contact', href: '#contact' },
-  { label: 'Request a Quote', href: '#contact' },
+  { label: 'Services', anchor: 'services' },
+  { label: 'About Us', anchor: 'about' },
+  { label: 'Coverage Area', anchor: 'coverage' },
+  { label: 'Reviews', anchor: 'reviews' },
+  { label: 'Contact', anchor: 'contact' },
+  { label: 'Request a Quote', anchor: 'contact' },
 ]
 
 const NavLogo = () => (
@@ -44,6 +35,8 @@ const NavLogo = () => (
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const location = useLocation()
+  const isHome = location.pathname === '/'
 
   return (
     <footer className="footer">
@@ -73,8 +66,8 @@ export default function Footer() {
               <h4 className="footer-col-title">Services</h4>
               <ul>
                 {SERVICES.map((s) => (
-                  <li key={s}>
-                    <a href="#services" className="footer-link">{s}</a>
+                  <li key={s.title}>
+                    <Link to={`/services/${SERVICE_SLUGS[s.title]}`} className="footer-link">{s.title}</Link>
                   </li>
                 ))}
               </ul>
@@ -84,16 +77,18 @@ export default function Footer() {
               <ul>
                 {QUICKLINKS.map((l) => (
                   <li key={l.label}>
-                    <a href={l.href} className="footer-link">{l.label}</a>
+                    <Link to={isHome ? `#${l.anchor}` : `/#${l.anchor}`} className="footer-link">{l.label}</Link>
                   </li>
                 ))}
               </ul>
 
               <h4 className="footer-col-title" style={{ marginTop: '28px' }}>Coverage</h4>
               <ul>
-                <li className="footer-link-plain">Palm Beach County</li>
-                <li className="footer-link-plain">Broward County</li>
-                <li className="footer-link-plain">Miami-Dade County</li>
+                {COUNTIES.map((c) => (
+                  <li key={c.name}>
+                    <Link to={`/areas/${AREA_SLUGS[c.name]}`} className="footer-link">{c.name}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -114,9 +109,9 @@ export default function Footer() {
                 </div>
               </div>
 
-              <a href="#contact" className="footer-quote-btn">
+              <Link to={isHome ? '#contact' : '/#contact'} className="footer-quote-btn">
                 Request a Quote
-              </a>
+              </Link>
             </div>
           </div>
         </div>

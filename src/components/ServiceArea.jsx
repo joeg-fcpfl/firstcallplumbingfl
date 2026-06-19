@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom'
 import { useInView } from '../hooks/useInView'
+import { AREA_SLUGS } from '../data/slugs'
 import './ServiceArea.css'
 
-const COUNTIES = [
+export const COUNTIES = [
   {
     name: 'Palm Beach County',
     abbr: 'PBC',
@@ -79,8 +81,9 @@ export default function ServiceArea() {
         {/* County cards */}
         <div ref={gridRef} className={`sa-grid ${gridIn ? 'visible' : ''}`}>
           {COUNTIES.map((county, i) => (
-            <div
+            <Link
               key={county.name}
+              to={`/areas/${AREA_SLUGS[county.name]}`}
               className={`sa-card fade-up delay-${i + 1} ${gridIn ? 'visible' : ''} ${county.hq ? 'sa-card-hq' : ''}`}
             >
               <div className="sa-card-header">
@@ -99,7 +102,7 @@ export default function ServiceArea() {
                   <span key={city} className="sa-city">{city}</span>
                 ))}
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

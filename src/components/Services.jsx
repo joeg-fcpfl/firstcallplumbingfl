@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom'
 import { useInView } from '../hooks/useInView'
+import { SERVICE_SLUGS } from '../data/slugs'
 import './Services.css'
 
-const SERVICES = [
+export const SERVICES = [
   {
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -177,7 +179,8 @@ const SERVICES = [
 function ServiceCard({ s, index }) {
   const [ref, inView] = useInView()
   return (
-    <div
+    <Link
+      to={`/services/${SERVICE_SLUGS[s.title]}`}
       ref={ref}
       className={`service-card fade-up delay-${(index % 4) + 1} ${inView ? 'visible' : ''}`}
     >
@@ -190,7 +193,7 @@ function ServiceCard({ s, index }) {
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
       </div>
-    </div>
+    </Link>
   )
 }
 

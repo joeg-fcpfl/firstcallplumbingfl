@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import './Navbar.css'
 
 const NavLogo = () => (
   <div className="nav-logo-wrap">
-    <img src="/FirstCall-01-4.png" alt="" className="nav-logo-img" aria-hidden="true" />
+    <img src="/FirstCall-01-4.webp" alt="" width="32" height="44" className="nav-logo-img" aria-hidden="true" />
     <div className="nav-logo-text">
       <span className="nav-logo-main">FIRST CALL</span>
       <span className="nav-logo-sub">PLUMBING</span>
@@ -12,16 +13,18 @@ const NavLogo = () => (
 )
 
 const LINKS = [
-  { label: 'Services', href: '#services' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Coverage', href: '#coverage' },
-  { label: 'Reviews', href: '#reviews' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Services', anchor: 'services' },
+  { label: 'About Us', anchor: 'about' },
+  { label: 'Coverage', anchor: 'coverage' },
+  { label: 'Reviews', anchor: 'reviews' },
+  { label: 'Contact', anchor: 'contact' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const location = useLocation()
+  const isHome = location.pathname === '/'
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40)
@@ -32,15 +35,20 @@ export default function Navbar() {
   return (
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-inner">
-        <a href="#hero" className="navbar-logo-link">
+        <Link to={isHome ? '#hero' : '/'} className="navbar-logo-link">
           <NavLogo />
-        </a>
+        </Link>
 
         <nav className={`navbar-links ${open ? 'open' : ''}`} aria-label="Main navigation">
           {LINKS.map((l) => (
-            <a key={l.label} href={l.href} className="nav-link" onClick={() => setOpen(false)}>
+            <Link
+              key={l.label}
+              to={isHome ? `#${l.anchor}` : `/#${l.anchor}`}
+              className="nav-link"
+              onClick={() => setOpen(false)}
+            >
               {l.label}
-            </a>
+            </Link>
           ))}
           <a href="tel:9547382255" className="nav-cta-mobile">
             954-738-CALL

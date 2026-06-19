@@ -11,12 +11,34 @@
   "reactSnap": {
     "source": "dist",
     "destination": "dist",
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
+    "include": [
+      "/",
+      "/services/new-construction",
+      "/services/tenant-buildouts",
+      "/services/backflow-testing",
+      "/services/grease-trap-services",
+      "/services/gas-lines",
+      "/services/remodels",
+      "/services/drain-cleaning",
+      "/services/video-sewer-inspection",
+      "/services/water-heaters",
+      "/services/emergency-service",
+      "/services/kitchen-bathroom-repairs",
+      "/services/preventative-maintenance",
+      "/areas/palm-beach",
+      "/areas/broward",
+      "/areas/miami-dade"
+    ],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-helmet-async": "^3.0.0"
+    "react-helmet-async": "^3.0.0",
+    "react-router-dom": "^6.30.4"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.2",

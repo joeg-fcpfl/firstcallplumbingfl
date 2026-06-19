@@ -1,27 +1,19 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Services from './components/Services'
-import Stats from './components/Stats'
-import About from './components/About'
-import Testimonials from './components/Testimonials'
-import ServiceArea from './components/ServiceArea'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import ServicePage from './pages/ServicePage'
+import AreaPage from './pages/AreaPage'
+import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Services />
-        <Stats />
-        <About />
-        <Testimonials />
-        <ServiceArea />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="services/:slug" element={<ServicePage />} />
+        <Route path="areas/:slug" element={<AreaPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   )
 }
