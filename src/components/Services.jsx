@@ -15,7 +15,7 @@ export const SERVICES = [
     ),
     title: 'New Construction',
     tag: 'Ground-Up Builds',
-    desc: 'Full rough-in and finish plumbing for commercial buildings, warehouses, office parks, mixed-use developments, and new homes — from foundation to certificate of occupancy. We work alongside GCs from day one to keep your project on schedule.',
+    desc: 'Full rough-in and finish plumbing for commercial buildings, warehouses, office parks, mixed-use developments, and new homes, from foundation to certificate of occupancy. We work alongside GCs from day one to keep your project on schedule.',
   },
   {
     icon: (
@@ -28,7 +28,7 @@ export const SERVICES = [
     ),
     title: 'Tenant Buildouts',
     tag: 'TI & Buildouts',
-    desc: 'Restaurants, retail, medical offices, and corporate suites. We scope, permit, and execute plumbing for tenant improvements coordinated with your general contractor — on time and on budget.',
+    desc: 'Restaurants, retail, medical offices, and corporate suites. We scope, permit, and execute plumbing for tenant improvements coordinated with your general contractor, on time and on budget.',
   },
   {
     icon: (
@@ -43,7 +43,7 @@ export const SERVICES = [
     ),
     title: 'Backflow Testing',
     tag: 'Testing & Certification',
-    desc: 'Annual backflow preventer testing, repair, and certification for commercial properties. Our licensed testers file the paperwork and keep your property in compliance with local and state codes — no follow-up needed.',
+    desc: 'Annual backflow preventer testing, repair, and certification for commercial properties. Our licensed testers file the paperwork and keep your property in compliance with local and state codes, no follow-up needed.',
   },
   {
     icon: (
@@ -97,7 +97,7 @@ export const SERVICES = [
     ),
     title: 'Drain Cleaning',
     tag: 'Hydro Jetting & Snaking',
-    desc: 'High-pressure hydro jetting and mechanical snaking for clogged drains, sewer lines, floor drains, and grease-blocked lines. Fast response, minimal disruption — for both commercial and residential.',
+    desc: 'High-pressure hydro jetting and mechanical snaking for clogged drains, sewer lines, floor drains, and grease-blocked lines. Fast response, minimal disruption, for both commercial and residential.',
   },
   {
     icon: (
@@ -127,7 +127,7 @@ export const SERVICES = [
     ),
     title: 'Water Heaters',
     tag: 'Install, Service & Tankless',
-    desc: 'Tank and tankless water heater installation, repair, and maintenance for homes, multi-family buildings, and commercial facilities. Tankless conversions available — reduce energy costs, free up space, and get endless hot water.',
+    desc: 'Tank and tankless water heater installation, repair, and maintenance for homes, multi-family buildings, and commercial facilities. Tankless conversions available: reduce energy costs, free up space, and get endless hot water.',
   },
   {
     icon: (
@@ -154,7 +154,7 @@ export const SERVICES = [
     ),
     title: 'Kitchen & Bathroom Repairs',
     tag: 'Fixtures & Repairs',
-    desc: 'Faucet and fixture repair or replacement, toilet rebuilds, sink installs, supply line repairs, and all kitchen and bathroom plumbing. Done right the first time — no callbacks, no excuses.',
+    desc: 'Faucet and fixture repair or replacement, toilet rebuilds, sink installs, supply line repairs, and all kitchen and bathroom plumbing. Done right the first time, no callbacks, no excuses.',
   },
   {
     icon: (
