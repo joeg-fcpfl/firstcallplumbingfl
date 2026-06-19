@@ -2,12 +2,11 @@ import { Link, useLocation } from 'react-router-dom'
 import './Footer.css'
 import { SERVICES } from './Services'
 import { COUNTIES } from './ServiceArea'
-import { SERVICE_SLUGS, AREA_SLUGS } from '../data/slugs'
+import { RESIDENTIAL_SERVICES } from '../data/residentialServices'
+import { SERVICE_SLUGS, AREA_SLUGS, RESIDENTIAL_SERVICE_SLUGS } from '../data/slugs'
 
 const QUICKLINKS = [
   { label: 'Services', anchor: 'services' },
-  { label: 'About Us', anchor: 'about' },
-  { label: 'Coverage Area', anchor: 'coverage' },
   { label: 'Reviews', anchor: 'reviews' },
   { label: 'Contact', anchor: 'contact' },
   { label: 'Request a Quote', anchor: 'contact' },
@@ -36,7 +35,8 @@ const NavLogo = () => (
 export default function Footer() {
   const year = new Date().getFullYear()
   const location = useLocation()
-  const isHome = location.pathname === '/'
+  const isResidential = location.pathname.startsWith('/residential')
+  const basePath = isResidential ? '/residential' : '/commercial'
 
   return (
     <footer className="footer">
@@ -45,8 +45,8 @@ export default function Footer() {
           <div className="footer-brand">
             <NavLogo />
             <p className="footer-tagline">
-              South Florida's trusted commercial plumbing contractor. Serving Palm Beach,
-              Broward, and Miami-Dade counties since 2023.
+              South Florida's trusted plumbing contractor for businesses and homeowners.
+              Serving Palm Beach, Broward, and Miami-Dade counties since 2023.
             </p>
             <div className="footer-contact-block">
               <a href="tel:9547382255" className="footer-phone">
@@ -63,21 +63,33 @@ export default function Footer() {
 
           <div className="footer-nav">
             <div className="footer-col">
-              <h4 className="footer-col-title">Services</h4>
+              <h4 className="footer-col-title">For Businesses</h4>
               <ul>
                 {SERVICES.map((s) => (
                   <li key={s.title}>
-                    <Link to={`/services/${SERVICE_SLUGS[s.title]}`} className="footer-link">{s.title}</Link>
+                    <Link to={`/commercial/services/${SERVICE_SLUGS[s.title]}`} className="footer-link">{s.title}</Link>
                   </li>
                 ))}
               </ul>
             </div>
+
+            <div className="footer-col">
+              <h4 className="footer-col-title">For Homeowners</h4>
+              <ul>
+                {RESIDENTIAL_SERVICES.map((s) => (
+                  <li key={s.title}>
+                    <Link to={`/residential/services/${RESIDENTIAL_SERVICE_SLUGS[s.title]}`} className="footer-link">{s.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <div className="footer-col">
               <h4 className="footer-col-title">Quick Links</h4>
               <ul>
                 {QUICKLINKS.map((l) => (
                   <li key={l.label}>
-                    <Link to={isHome ? `#${l.anchor}` : `/#${l.anchor}`} className="footer-link">{l.label}</Link>
+                    <Link to={`${basePath}#${l.anchor}`} className="footer-link">{l.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -86,7 +98,7 @@ export default function Footer() {
               <ul>
                 {COUNTIES.map((c) => (
                   <li key={c.name}>
-                    <Link to={`/areas/${AREA_SLUGS[c.name]}`} className="footer-link">{c.name}</Link>
+                    <Link to={`/commercial/areas/${AREA_SLUGS[c.name]}`} className="footer-link">{c.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -109,7 +121,7 @@ export default function Footer() {
                 </div>
               </div>
 
-              <Link to={isHome ? '#contact' : '/#contact'} className="footer-quote-btn">
+              <Link to={`${basePath}#contact`} className="footer-quote-btn">
                 Request a Quote
               </Link>
             </div>

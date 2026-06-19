@@ -88,6 +88,42 @@
   background: oklch(64% 0.17 55 / 0.06);
 }
 
+/* ─── Audience toggle ─── */
+.nav-audience-toggle {
+  display: flex;
+  gap: 3px;
+  background: var(--surface);
+  border-radius: 4px;
+  padding: 3px;
+  margin-right: var(--space-4);
+}
+
+.nav-audience-pill {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-med);
+  padding: 7px 14px;
+  border-radius: 3px;
+  transition: color 0.18s, background 0.18s;
+}
+
+.nav-audience-pill:hover {
+  color: var(--text-dark);
+}
+
+.nav-audience-pill.active {
+  background: var(--amber);
+  color: var(--white);
+}
+
+.nav-audience-pill.residential.active {
+  background: var(--slate);
+  color: var(--white);
+}
+
 /* ─── Phone CTA ─── */
 .nav-phone-btn {
   display: flex;
@@ -172,6 +208,19 @@
     width: 100%;
     border-radius: 0;
     letter-spacing: 2px;
+  }
+
+  .nav-audience-toggle {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: var(--space-4);
+  }
+
+  .nav-audience-pill {
+    flex: 1;
+    text-align: center;
+    font-size: 13px;
+    padding: 10px 0;
   }
 
   .nav-cta-mobile {

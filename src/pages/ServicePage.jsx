@@ -16,7 +16,7 @@ export default function ServicePage() {
   if (!service) return <Navigate to="/404" replace />
 
   const copy = SERVICE_COPY[title]
-  const pageUrl = `${BASE_URL}/services/${slug}`
+  const pageUrl = `${BASE_URL}/commercial/services/${slug}`
 
   return (
     <>
@@ -30,7 +30,7 @@ export default function ServicePage() {
       <section className="service-page">
         <div className="container">
           <nav className="service-page-breadcrumb" aria-label="Breadcrumb">
-            <Link to="/">Home</Link> / <Link to="/#services">Services</Link> / <span>{title}</span>
+            <Link to="/commercial">Home</Link> / <Link to="/commercial#services">Services</Link> / <span>{title}</span>
           </nav>
 
           <div className="service-page-head">
@@ -46,14 +46,14 @@ export default function ServicePage() {
 
           <div className="service-page-cta">
             <p>Need {title.toLowerCase()} in South Florida?</p>
-            <Link to="/#contact" className="service-page-cta-btn">REQUEST A QUOTE</Link>
+            <Link to="/commercial#contact" className="service-page-cta-btn">REQUEST A QUOTE</Link>
           </div>
 
           <div className="service-page-other">
             <h2>Other Services</h2>
             <div className="service-page-other-grid">
               {SERVICES.filter((s) => s.title !== title).slice(0, 4).map((s) => (
-                <Link key={s.title} to={`/services/${SERVICE_SLUGS[s.title]}`} className="service-page-other-link">
+                <Link key={s.title} to={`/commercial/services/${SERVICE_SLUGS[s.title]}`} className="service-page-other-link">
                   {s.title}
                 </Link>
               ))}

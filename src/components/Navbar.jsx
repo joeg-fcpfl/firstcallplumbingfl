@@ -12,10 +12,17 @@ const NavLogo = () => (
   </div>
 )
 
-const LINKS = [
+const COMMERCIAL_LINKS = [
   { label: 'Services', anchor: 'services' },
   { label: 'About Us', anchor: 'about' },
   { label: 'Coverage', anchor: 'coverage' },
+  { label: 'Reviews', anchor: 'reviews' },
+  { label: 'Contact', anchor: 'contact' },
+]
+
+const RESIDENTIAL_LINKS = [
+  { label: 'Services', anchor: 'services' },
+  { label: 'Why Us', anchor: 'why' },
   { label: 'Reviews', anchor: 'reviews' },
   { label: 'Contact', anchor: 'contact' },
 ]
@@ -24,7 +31,11 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const location = useLocation()
-  const isHome = location.pathname === '/'
+
+  const isCommercial = location.pathname.startsWith('/commercial')
+  const isResidential = location.pathname.startsWith('/residential')
+  const basePath = isCommercial ? '/commercial' : isResidential ? '/residential' : null
+  const links = isCommercial ? COMMERCIAL_LINKS : isResidential ? RESIDENTIAL_LINKS : []
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40)
@@ -35,15 +46,32 @@ export default function Navbar() {
   return (
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-inner">
-        <Link to={isHome ? '#hero' : '/'} className="navbar-logo-link">
+        <Link to="/" className="navbar-logo-link">
           <NavLogo />
         </Link>
 
         <nav className={`navbar-links ${open ? 'open' : ''}`} aria-label="Main navigation">
-          {LINKS.map((l) => (
+          <div className="nav-audience-toggle">
+            <Link
+              to="/commercial"
+              className={`nav-audience-pill ${isCommercial ? 'active' : ''}`}
+              onClick={() => setOpen(false)}
+            >
+              Commercial
+            </Link>
+            <Link
+              to="/residential"
+              className={`nav-audience-pill residential ${isResidential ? 'active' : ''}`}
+              onClick={() => setOpen(false)}
+            >
+              Residential
+            </Link>
+          </div>
+
+          {links.map((l) => (
             <Link
               key={l.label}
-              to={isHome ? `#${l.anchor}` : `/#${l.anchor}`}
+              to={`${basePath}#${l.anchor}`}
               className="nav-link"
               onClick={() => setOpen(false)}
             >

@@ -10,7 +10,7 @@ import Testimonials from '../components/Testimonials'
 import ServiceArea from '../components/ServiceArea'
 import Contact from '../components/Contact'
 
-export default function Home() {
+export default function CommercialHome() {
   const { hash } = useLocation()
 
   useEffect(() => {
@@ -28,9 +28,9 @@ export default function Home() {
           name="description"
           content="First Call Plumbing — South Florida's premier commercial plumbing contractor. Serving Palm Beach, Broward & Miami-Dade counties. Licensed CFC1432753."
         />
-        <link rel="canonical" href="https://firstcallplumbingfl.com/" />
+        <link rel="canonical" href="https://firstcallplumbingfl.com/commercial" />
       </Helmet>
-      <Schema pageUrl="https://firstcallplumbingfl.com/" />
+      <Schema pageUrl="https://firstcallplumbingfl.com/commercial" />
 
       <Hero />
       <Services />
@@ -38,7 +38,7 @@ export default function Home() {
       <About />
       <Testimonials />
       <ServiceArea />
-      <Contact />
+      <Contact audience="commercial" />
     </>
   )
 }

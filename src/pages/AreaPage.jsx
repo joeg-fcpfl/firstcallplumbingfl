@@ -3,7 +3,8 @@ import { Helmet } from 'react-helmet-async'
 import Schema from '../components/Schema'
 import { COUNTIES } from '../components/ServiceArea'
 import { SERVICES } from '../components/Services'
-import { AREA_SLUGS, SERVICE_SLUGS } from '../data/slugs'
+import { RESIDENTIAL_SERVICES } from '../data/residentialServices'
+import { AREA_SLUGS, SERVICE_SLUGS, RESIDENTIAL_SERVICE_SLUGS } from '../data/slugs'
 import { AREA_COPY } from '../data/areaCopy'
 import './AreaPage.css'
 
@@ -17,7 +18,7 @@ export default function AreaPage() {
   if (!county) return <Navigate to="/404" replace />
 
   const copy = AREA_COPY[name]
-  const pageUrl = `${BASE_URL}/areas/${slug}`
+  const pageUrl = `${BASE_URL}/commercial/areas/${slug}`
   const pageTitle = `Commercial Plumbing in ${county.name} | First Call Plumbing`
   const pageDesc = `Licensed commercial plumbing contractor serving ${county.name}: ${county.cities.slice(0, 4).join(', ')}, and more. ${county.hq ? 'Headquartered in Broward County. ' : ''}Call 954-738-CALL for a free estimate.`
 
@@ -33,7 +34,7 @@ export default function AreaPage() {
       <section className="area-page">
         <div className="container">
           <nav className="area-page-breadcrumb" aria-label="Breadcrumb">
-            <Link to="/">Home</Link> / <Link to="/#coverage">Service Area</Link> / <span>{county.name}</span>
+            <Link to="/commercial">Home</Link> / <Link to="/commercial#coverage">Service Area</Link> / <span>{county.name}</span>
           </nav>
 
           <div className="area-page-head">
@@ -57,7 +58,7 @@ export default function AreaPage() {
             <h2>Services Available in {county.name}</h2>
             <div className="area-page-services-grid">
               {SERVICES.slice(0, 6).map((s) => (
-                <Link key={s.title} to={`/services/${SERVICE_SLUGS[s.title]}`} className="area-page-service-link">
+                <Link key={s.title} to={`/commercial/services/${SERVICE_SLUGS[s.title]}`} className="area-page-service-link">
                   {s.title}
                 </Link>
               ))}
@@ -66,7 +67,23 @@ export default function AreaPage() {
 
           <div className="area-page-cta">
             <p>Get a free estimate for your {county.name} project.</p>
-            <Link to="/#contact" className="area-page-cta-btn">REQUEST A QUOTE</Link>
+            <Link to="/commercial#contact" className="area-page-cta-btn">REQUEST A QUOTE</Link>
+          </div>
+
+          <div className="area-page-residential">
+            <h2>We Also Serve Homeowners in {county.name}</h2>
+            <p className="area-page-residential-sub">
+              Drain cleaning, water heaters, leak detection, and emergency plumbing for homes
+              throughout {county.name}, not just businesses.
+            </p>
+            <div className="area-page-residential-grid">
+              {RESIDENTIAL_SERVICES.slice(0, 4).map((s) => (
+                <Link key={s.title} to={`/residential/services/${RESIDENTIAL_SERVICE_SLUGS[s.title]}`} className="area-page-residential-link">
+                  {s.title}
+                </Link>
+              ))}
+            </div>
+            <Link to="/residential" className="area-page-residential-cta">Get Residential Help →</Link>
           </div>
         </div>
       </section>

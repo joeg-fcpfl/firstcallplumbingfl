@@ -18,3 +18,14 @@ export const AREA_SLUGS = {
   'Broward County': 'broward',
   'Miami-Dade County': 'miami-dade',
 }
+
+export const RESIDENTIAL_SERVICE_SLUGS = {
+  'Drain Cleaning': 'drain-cleaning',
+  'Water Heaters': 'water-heaters',
+  'Toilet & Faucet Repair': 'toilet-faucet-repair',
+  'Leak Detection': 'leak-detection',
+  'Garbage Disposal': 'garbage-disposal',
+  'Sump Pumps': 'sump-pumps',
+  'Repiping': 'repiping',
+  'Emergency Plumbing': 'emergency-plumbing',
+}

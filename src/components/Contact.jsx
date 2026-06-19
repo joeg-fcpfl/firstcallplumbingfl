@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { useInView } from '../hooks/useInView'
+import { RESIDENTIAL_SERVICES } from '../data/residentialServices'
 import './Contact.css'
 
-const SERVICES = [
+const COMMERCIAL_SERVICES = [
   'New Construction / Ground-Up',
   'Tenant Improvement / Buildout',
   'Backflow Prevention & Testing',
@@ -14,6 +15,11 @@ const SERVICES = [
   'Code Compliance / Inspection',
   'Preventive Maintenance',
   'Emergency Service',
+  'Other',
+]
+
+const HOMEOWNER_SERVICES = [
+  ...RESIDENTIAL_SERVICES.map((s) => s.title),
   'Other',
 ]
 
@@ -76,7 +82,10 @@ const INFO = [
   },
 ]
 
-export default function Contact() {
+export default function Contact({ audience = 'commercial' }) {
+  const isResidential = audience === 'residential'
+  const SERVICES = isResidential ? HOMEOWNER_SERVICES : COMMERCIAL_SERVICES
+
   const [formRef, formIn] = useInView()
   const [infoRef, infoIn] = useInView()
   const [submitted, setSubmitted] = useState(false)
@@ -147,27 +156,39 @@ export default function Contact() {
                       value={form.name} onChange={set('name')} required
                     />
                   </div>
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="company">Company</label>
-                    <input
-                      id="company" type="text" className="form-input" placeholder="ABC Construction LLC"
-                      value={form.company} onChange={set('company')}
-                    />
-                  </div>
+                  {isResidential ? (
+                    <div className="form-group">
+                      <label className="form-label" htmlFor="phone">Phone *</label>
+                      <input
+                        id="phone" type="tel" className="form-input" placeholder="(954) 000-0000"
+                        value={form.phone} onChange={set('phone')} required
+                      />
+                    </div>
+                  ) : (
+                    <div className="form-group">
+                      <label className="form-label" htmlFor="company">Company</label>
+                      <input
+                        id="company" type="text" className="form-input" placeholder="ABC Construction LLC"
+                        value={form.company} onChange={set('company')}
+                      />
+                    </div>
+                  )}
                 </div>
 
                 <div className="form-row">
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="phone">Phone *</label>
-                    <input
-                      id="phone" type="tel" className="form-input" placeholder="(954) 000-0000"
-                      value={form.phone} onChange={set('phone')} required
-                    />
-                  </div>
+                  {!isResidential && (
+                    <div className="form-group">
+                      <label className="form-label" htmlFor="phone">Phone *</label>
+                      <input
+                        id="phone" type="tel" className="form-input" placeholder="(954) 000-0000"
+                        value={form.phone} onChange={set('phone')} required
+                      />
+                    </div>
+                  )}
                   <div className="form-group">
                     <label className="form-label" htmlFor="email">Email *</label>
                     <input
-                      id="email" type="email" className="form-input" placeholder="john@company.com"
+                      id="email" type="email" className="form-input" placeholder={isResidential ? 'john@email.com' : 'john@company.com'}
                       value={form.email} onChange={set('email')} required
                     />
                   </div>
@@ -198,7 +219,9 @@ export default function Contact() {
                   <label className="form-label" htmlFor="message">Project Details *</label>
                   <textarea
                     id="message" className="form-textarea" rows={5}
-                    placeholder="Describe your project — location, scope, timeline, any specific requirements…"
+                    placeholder={isResidential
+                      ? "Describe what's going on — what's happening, where in the house, and how urgent it is…"
+                      : 'Describe your project — location, scope, timeline, any specific requirements…'}
                     value={form.message} onChange={set('message')} required
                   />
                 </div>

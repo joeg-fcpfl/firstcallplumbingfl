@@ -59,6 +59,29 @@ const WHY = [
     title: 'Transparent Pricing',
     text: 'We communicate clearly on cost before and during every job. Some work reveals additional scope once we\'re in. When that happens, we walk you through what we found and why before moving forward.',
   },
+  {
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+        <circle cx="11" cy="10" r="4"/>
+        <path d="M4 27v-2a7 7 0 017-7h0"/>
+        <circle cx="22" cy="10" r="4"/>
+        <path d="M15 27v-2a7 7 0 017-7h0a7 7 0 017 7v2"/>
+      </svg>
+    ),
+    title: 'References on Request',
+    text: 'Ask and we\'ll connect you with property managers and GCs we\'ve worked with. We\'d rather you hear it from them than just take our word for it.',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+        <circle cx="16" cy="16" r="13"/>
+        <path d="M16 9v7l5 3"/>
+        <path d="M9 9l2 2M23 9l-2 2"/>
+      </svg>
+    ),
+    title: 'We Work Around Your Operations',
+    text: 'Occupied building, live kitchen, doesn\'t matter. We schedule rough-in, repairs, and emergency calls around your hours so business doesn\'t stop for plumbing.',
+  },
 ]
 
 export default function About() {
