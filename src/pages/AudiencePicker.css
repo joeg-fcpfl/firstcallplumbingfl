@@ -106,4 +106,8 @@
   .picker {
     padding: 120px 0 var(--space-12);
   }
+
+  .picker-grid {
+    grid-template-columns: 1fr;
+  }
 }
